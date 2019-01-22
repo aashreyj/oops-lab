@@ -22,7 +22,7 @@ int main()
 	fseek(fptr,0L,SEEK_SET); //resetting pointer to start of file
 	
 	c=(char*)calloc(numbytes,sizeof(char)); //initialize input string
-	d=(char*)calloc(numbytes+100,sizeof(char)); //initialize output string
+	d=(char*)calloc(numbytes+1000,sizeof(char)); //initialize output string
 	
 	fread(c,sizeof(char),numbytes,fptr); //copying input file to input string for processing
 	
