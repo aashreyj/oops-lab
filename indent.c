@@ -11,12 +11,12 @@ int main()
 	FILE *fptr; //input file pointer
 	FILE *fptr1; //output file pointer
 
-	fptr=fopen("input.txt","r"); //input file opened in read mode
+	fptr=fopen("testfile.cpp","r"); //input file opened in read mode
 	fptr1=fopen("output.txt","w"); //output file opened in write mode
 	
 	if(fptr==NULL || fptr1==NULL) //checking unable to open file
 		printf("File could not be opened.\n");
-	
+		
 	fseek(fptr,0L,SEEK_END); 
 	numbytes=ftell(fptr); //finding size of input file
 	fseek(fptr,0L,SEEK_SET); //resetting pointer to start of file
