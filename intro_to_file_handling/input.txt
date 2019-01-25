@@ -1,0 +1,12 @@
+int main() {
+int x=30,i;
+for(i=1;i<=10;i++) {
+if(!(x%i)) {
+printf("It is divisible.");
+}
+else {
+printf(It is not divisible.");
+}
+}
+return 0;
+}

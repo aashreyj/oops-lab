@@ -11,7 +11,7 @@ int main()
 	FILE *fptr; //input file pointer
 	FILE *fptr1; //output file pointer
 
-	fptr=fopen("testfile.cpp","r"); //input file opened in read mode
+	fptr=fopen("input.txt","r"); //input file opened in read mode
 	fptr1=fopen("output.txt","w"); //output file opened in write mode
 	
 	if(fptr==NULL || fptr1==NULL) //checking unable to open file
@@ -34,7 +34,7 @@ int main()
 			counter++;
 		if(c[index+1]=='}' && (c[index-1]!='\'' && c[index+1]!='\'')) //checking for closing } even if code contains it in ''
 			counter--;
-		if(c[index]=='\n') //making indents
+		if(c[index]=='\n') //making indents when newline is encountered
 			for(indent=0;indent<counter;indent++)
 				d[index1++]='	';
 	}
