@@ -9,12 +9,10 @@ int main()
 	long numbytes; //size of input file
 	
 	FILE *fptr; //input file pointer
-	FILE *fptr1; //output file pointer
 
-	fptr=fopen("input.txt","r"); //input file opened in read mode
-	fptr1=fopen("output.txt","w"); //output file opened in write mode
+	fptr=fopen("input.cpp","r"); //input file opened in read mode
 	
-	if(fptr==NULL || fptr1==NULL) //checking unable to open file
+	if(fptr==NULL) //checking unable to open file
 		printf("File could not be opened.\n");
 		
 	fseek(fptr,0L,SEEK_END); 
@@ -38,13 +36,12 @@ int main()
 			for(indent=0;indent<counter;indent++)
 				d[index1++]='	';
 	}
-	d[index1]='\0'; //output file EOF
-	fputs(d,fptr1); //writing to output file
 	fclose(fptr); //close input file
-	fclose(fptr1); //close output file
+	fptr = fopen("input.cpp", "w"); //reopen input file in overwrite mode
+	fputs(d, fptr); //modify input file to add indents
+	
+	fclose(fptr); //close file
 	free(c);
 	free(d);
 	return 0;
 }
-	
-
