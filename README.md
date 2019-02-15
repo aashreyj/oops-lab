@@ -6,3 +6,5 @@ Large number problems contains code for reading large numbers from text files an
 
 Manipulators in C++ contains code for displaying patterns. Pyramid.cpp takes number of lines as input and displays a pattern of * and numbers. 
 Plotters.cpp displays the graph of x = sin(y)
+
+Basic classes contains classes for linked list and hash table.
