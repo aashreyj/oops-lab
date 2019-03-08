@@ -2,7 +2,7 @@
 #include<string.h>
 #include<malloc.h>
 
-int main()
+int main(int argc,char* argv[])
 {
 	int counter=0,index,indent,index1=0; //initialized all variables
 	char *c,*d; //input and output strings
@@ -10,7 +10,7 @@ int main()
 	
 	FILE *fptr; //input file pointer
 
-	fptr=fopen("input.cpp","r"); //input file opened in read mode
+	fptr=fopen(argv[1],"r"); //input file opened in read mode
 	
 	if(fptr==NULL) //checking unable to open file
 		printf("File could not be opened.\n");
@@ -37,7 +37,7 @@ int main()
 				d[index1++]='	';
 	}
 	fclose(fptr); //close input file
-	fptr = fopen("input.cpp", "w"); //reopen input file in overwrite mode
+	fptr = fopen(argv[1], "w"); //reopen input file in overwrite mode
 	fputs(d, fptr); //modify input file to add indents
 	
 	fclose(fptr); //close file
