@@ -42,7 +42,7 @@ void bst::insert(node* current, node* toBeAdded) //current is root of current tr
         root = new node;
         root -> data = toBeAdded -> data;
         root -> left = root -> right = NULL;
-        cout<<"Added.\n\n";
+        cout<<"Added.\n";
     }
     else if(toBeAdded -> data < current -> data)
     {
@@ -64,10 +64,10 @@ void bst::insert(node* current, node* toBeAdded) //current is root of current tr
             current -> right = toBeAdded; //adding to right subtree
             (current -> right) -> left = (current -> right) -> right = NULL;
         }
-        cout<<"Added.\n\n";
+        cout<<"Added.\n";
     }
     else //duplicate value
-        cout<<"Element already present in tree."<<endl;
+        cout<<"\nElement already present in tree."<<endl;
 }
 
 node* bst::search(node *current, int key)
@@ -104,6 +104,7 @@ int main()
         a.insert(a.root, temp);
         cout<<"Do you want to continue? "; 
         cin>>choice;
+        cout<<endl;
     }
     while(choice);
     do
@@ -140,6 +141,7 @@ int main()
         }
         cout<<"Do you want to continue? "; 
         cin>>choice;
+        cout<<endl;
     } while (choice);
     cout<<endl;
 }
