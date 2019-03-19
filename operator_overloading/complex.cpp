@@ -40,13 +40,13 @@ class complex_num
     }
 
     //overloading - operator
-    complex_num operator-(complex_num &b) //- opereator overloaded for type c1 - c2
+    complex_num operator-(complex_num &b) //- operator overloaded for type c1 - c2
     {
         complex_num result(real - b.real, imag - b.imag);
         return result;
     }
 
-    complex_num operator-(float x) //- opereator overloaded for type c1 - (real num)
+    complex_num operator-(float x) //- operator overloaded for type c1 - (real num)
     {
         complex_num result(real - x, imag);
         return result;
@@ -59,13 +59,13 @@ class complex_num
     }
 
     //overloading * operator
-    complex_num operator*(complex_num &b) //- opereator overloaded for type c1 * c2
+    complex_num operator*(complex_num &b) //- operator overloaded for type c1 * c2
     {
         complex_num result((real * b.real) - (imag * b.imag), ((real * b.imag) + (imag * b.real)));
         return result;
     }
 
-    complex_num operator*(float x) //- opereator overloaded for type c1 * (real num)
+    complex_num operator*(float x) //- operator overloaded for type c1 * (real num)
     {
         complex_num result(real * x, imag * x);
         return result;
@@ -105,77 +105,83 @@ int main()
     cout<<"\nThe first complex number is: "<<c1.real<<" + "<<c1.imag<<"i";
     cout<<"\nThe second complex number is: "<<c2.real<<" + "<<c2.imag<<"i";
 
-    cout<<"\n\n1. Add \n2. Subtract \n3. Multiply \n4. Modulus\n";
-    cout<<"Enter your choice: ";
-    cin>>choice;
-    switch (choice)
+    do
     {
-        case 1: {
-            cout<<"\nAdding in the type c1 + c2: ";
-            result = c1 + c2;
-            cout<<result.real<<" + "<<result.imag<<"i"<<endl;
+        cout<<"\n\n1. Add \n2. Subtract \n3. Multiply \n4. Modulus\n";
+        cout<<"Enter your choice: ";
+        cin>>choice;
+        switch (choice)
+        {
+            case 1: {
+                cout<<"\nAdding in the type c1 + c2: ";
+                result = c1 + c2;
+                cout<<result.real<<" + "<<result.imag<<"i"<<endl;
 
-            cout<<"\nInput your argument: ";
-            cin>>operand;
-            result = c1 + operand;
-            cout<<"Adding in the type c1 + (real num): ";
-            cout<<result.real<<" + "<<result.imag<<"i"<<endl;
+                cout<<"\nInput your argument: "; //taking input as real number
+                cin>>operand;
+                result = c1 + operand;
+                cout<<"Adding in the type c1 + (real num): ";
+                cout<<result.real<<" + "<<result.imag<<"i"<<endl;
 
-            cout<<"\nInput your argument: ";
-            cin>>operand;
-            result = operand + c2;
-            cout<<"\nAdding in the type (imag num) + c2: ";
-            cout<<result.real<<" + "<<result.imag<<"i"<<endl;
+                cout<<"\nInput your argument: "; //taking input as imaginary number
+                cin>>operand;
+                result = operand + c2;
+                cout<<"\nAdding in the type (imag num) + c2: ";
+                cout<<result.real<<" + "<<result.imag<<"i"<<endl;
 
-            break;
+                break;
+            }
+
+            case 2: {
+                result = c1 - c2;
+                cout<<"Subtracting in the type c1 - c2: ";
+                cout<<result.real<<" + "<<result.imag<<"i"<<endl;
+
+                cout<<"\nInput your argument: "; //taking input as real number
+                cin>>operand;
+                result = c1 - operand;
+                cout<<"Subtracting in the type c1 - (real num): ";
+                cout<<result.real<<" + "<<result.imag<<"i"<<endl;
+ 
+                cout<<"\nInput your argument: "; //taking input as complex number
+                cin>>operand;
+                result = operand - c2;
+                cout<<"Subtracting in the type (imag num) - c2: ";
+                cout<<result.real<<" + "<<result.imag<<"i"<<endl;
+
+                break;
+            }
+
+            case 3: {
+                result = c1 * c2;
+                cout<<"Multiplying in the type c1 * c2: ";
+                cout<<result.real<<" + "<<result.imag<<"i"<<endl;
+
+                cout<<"\nInput your argument: "; //taking input as real number
+                cin>>operand;
+                result = c1 * operand;
+                cout<<"Multiplying in the type c1 * (real num): ";
+                cout<<result.real<<" + "<<result.imag<<"i"<<endl;
+
+                cout<<"\nInput your argument: "; //taking argument as imaginary number
+                cin>>operand;
+                result = operand * c2;
+                cout<<"Multiplying in the type (imag num) * c2: ";
+                cout<<result.real<<" + "<<result.imag<<"i"<<endl;
+
+                break;
+            }
+
+            case 4: {
+                float mod = ~c1;
+                cout<<"The modulus of the complex number c1 is: "<<mod<<".\n";
+                break;
+            }
         }
 
-        case 2: {
-            result = c1 - c2;
-            cout<<"Subtracting in the type c1 - c2: ";
-            cout<<result.real<<" + "<<result.imag<<"i"<<endl;
-
-            cout<<"\nInput your argument: ";
-            cin>>operand;
-            result = c1 - operand;
-            cout<<"Subtracting in the type c1 - (real num): ";
-            cout<<result.real<<" + "<<result.imag<<"i"<<endl;
-
-            cout<<"\nInput your argument: ";
-            cin>>operand;
-            result = operand - c2;
-            cout<<"Subtracting in the type (imag num) - c2: ";
-            cout<<result.real<<" + "<<result.imag<<"i"<<endl;
-
-            break;
-        }
-
-        case 3: {
-            result = c1 * c2;
-            cout<<"Multiplying in the type c1 * c2: ";
-            cout<<result.real<<" + "<<result.imag<<"i"<<endl;
-
-            cout<<"\nInput your argument: ";
-            cin>>operand;
-            result = c1 * operand;
-            cout<<"Multiplying in the type c1 * (real num): ";
-            cout<<result.real<<" + "<<result.imag<<"i"<<endl;
-
-            cout<<"\nInput your argument: ";
-            cin>>operand;
-            result = operand * c2;
-            cout<<"Multiplying in the type (imag num) * c2: ";
-            cout<<result.real<<" + "<<result.imag<<"i"<<endl;
-
-            break;
-        }
-
-        case 4: {
-            float mod = ~c1;
-            cout<<"The modulus of the complex number c1 is: "<<mod<<".\n";
-            break;
-        }
-    }
-
+        cout<<"\nDo you want to continue? ";
+        cin>>choice;
+    }while(choice);
+    
     return 0;
 }
