@@ -71,7 +71,7 @@ void linked_list::display()
     cout<<"The current linked list is: ";
     while(temp != NULL)
     {
-        cout<<temp -> data<<" ";
+        cout<<temp -> data<<" -> ";
         temp = temp -> link;
     }
     cout<<endl;
@@ -91,15 +91,15 @@ int linked_list::search(int key)
     return -1;
 }
 
-class hash_table //let hash function be x%25
+class hash_table //let hash function be x%10
 {
     public:
     linked_list *list;
     hash_table()
     {
         int i;
-        list = new linked_list [25];
-        for(i = 0; i < 25; i++)
+        list = new linked_list [10];
+        for(i = 0; i < 10; i++)
             list[i].head = NULL;
     }
 
@@ -114,7 +114,7 @@ class hash_table //let hash function be x%25
 
 void hash_table::addHash(int data)
 {
-    int key = data % 25;
+    int key = data % 10;
     list[key].list_add(data);
 }
 
@@ -122,7 +122,7 @@ void hash_table::displayHash()
 {
     int i;
     cout<<"The Hash Table is: \n";
-    for(i = 0; i < 25; i++)
+    for(i = 0; i < 10; i++)
         list[i].display();
     cout<<endl;
 }
