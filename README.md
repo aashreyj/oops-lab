@@ -6,6 +6,6 @@ Large number problems contains code for reading large numbers from text files an
 
 Manipulators in C++ contains code for displaying patterns. Pyramid.cpp takes number of lines as input and displays a pattern of * and numbers. Plotters.cpp displays the graph of x = sin(y)
 
-Basic classes contains classes for complex numbers, linked list, hash table, matrix multiplication, stack and binary search tree.
+Basic classes contains classes for complex numbers, linked list, hash table, buddy list, matrix multiplication, stack and binary search tree.
 
-Operator overloading contains classes (complex, matrix, complex-matrix) in which operators have been overloaded.
+Operator overloading contains classes (complex, matrix, complex-matrix and polynomial) in which operators have been overloaded.
