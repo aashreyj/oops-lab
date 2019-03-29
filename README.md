@@ -10,4 +10,4 @@ Basic classes contains classes for complex numbers, linked list, hash table, bud
 
 Operator overloading contains classes (complex, matrix, string, complex-matrix and polynomial) in which operators have been overloaded.
 
-Templates contains generic template codes for stack, linked list, heap and queue.
+Templates contains generic template codes for stack, linked list, matrix, heap and queue.
