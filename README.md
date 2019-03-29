@@ -8,4 +8,6 @@ Manipulators in C++ contains code for displaying patterns. Pyramid.cpp takes num
 
 Basic classes contains classes for complex numbers, linked list, hash table, buddy list, matrix multiplication, stack and binary search tree.
 
-Operator overloading contains classes (complex, matrix, complex-matrix and polynomial) in which operators have been overloaded.
+Operator overloading contains classes (complex, matrix, string, complex-matrix and polynomial) in which operators have been overloaded.
+
+Templates contains generic template codes for stack, linked list, heap and queue.
